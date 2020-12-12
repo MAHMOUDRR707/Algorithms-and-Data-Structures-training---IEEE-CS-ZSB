@@ -1,0 +1,64 @@
+#problem link :https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor/problem?h_r=internal-search
+
+
+class Node:
+    def __init__(self, info): 
+        self.info = info  
+        self.left = None  
+        self.right = None 
+        self.level = None 
+
+    def __str__(self):
+        return str(self.info) 
+
+class BinarySearchTree:
+    def __init__(self): 
+        self.root = None
+
+    def create(self, val):  
+        if self.root == None:
+            self.root = Node(val)
+        else:
+            current = self.root
+         
+            while True:
+                if val < current.info:
+                    if current.left:
+                        current = current.left
+                    else:
+                        current.left = Node(val)
+                        break
+                elif val > current.info:
+                    if current.right:
+                        current = current.right
+                    else:
+                        current.right = Node(val)
+                        break
+                else:
+                    break
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+'''
+class Node:
+      def __init__(self,info): 
+          self.info = info  
+          self.left = None  
+          self.right = None 
+           
+
+       // this is a node of the tree , which contains info as data, left , right
+'''
+
+def lca(root, v1, v2):
+     # If this node is less than both v1 and v2 go right
+    if root.info < v1 and root.info < v2:
+        return lca(root.right, v1, v2)
+    # If this node is greater than both v1 and v2 go left
+    elif root.info > v1 and root.info > v2:
+        return lca(root.left, v1, v2)
+    # If this node is in between then it is the LCA
+    elif root.info >= min(v1, v2) and root.info <= max(v1, v2):
+        return root
+    lca(root.right, v1, v2)
+
+tree = BinarySearchTree()
