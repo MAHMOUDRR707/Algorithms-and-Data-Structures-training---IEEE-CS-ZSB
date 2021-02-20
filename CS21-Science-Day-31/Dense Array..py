@@ -1,5 +1,5 @@
 #problem link : https://codeforces.com/contest/1490/problem/A
-#time : O(n*3)
+#time : O(n*2 log2(n))
 
 n =  int(input())
 for i in range(n):
