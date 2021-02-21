@@ -4,7 +4,7 @@
 Solution of  Algorithms and Data Structure Problems
 
 
-Problems from *Hacker Rank* and *codeforces* using python and java
+Problems from *Hacker Rank* , *codeforces* , *Codechief*  using python mainly
 
 
 Each problem has its on link in code file
